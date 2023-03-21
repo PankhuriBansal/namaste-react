@@ -1,0 +1,30 @@
+created the src folder to wrap out code into a better structure  - a common convention which we use in the industry
+using default keyword to export only one function but cant be used to export 2 functions in the same js file 
+to export default we use the normal function but to import in {} we will use expotr const functionname
+it is fine to use jsx extension in place of js extension but sometimes it can break while using external libraries but normally it is completely fine to use this jsx extension 
+named export, default export
+---config.js-----
+create a config.js file to put all jard coded things in config file
+put image link in the config file and use it in the app.js by using the named import 
+also put restaurant list in the config file 
+-----making search function in the body-------
+initally when we made input it did not work as it would have worked in html
+so later will use onchangeInput function 
+---state variable---
+to change the variable in react we need to use state variable 
+every component in react maintains a state and we can put all varibale into state
+when we need to create a local variable in react we use state in that 
+to create a local varibale eg - searchtxt , we will create it using useState hook
+//wht is a state - to use local variable in react we need to create state variables 
+//hook -- it's just a normal function but every hook has a function for it 
+..function of useState is to create state variable
+to modify the variable in react we use the setState function 
+useState will return an array whose firstelement would be state and second setState
+-----why we need state variable-----
+because when a variable changes react would not come to know if we change it in the normal form without using states, so it will not update the DOM and hence no change can be recorded in the code...
+so everytime we want our varaibales to be in sync with the UI we need to use state variables 
+react originally has one way binding but by using states we can make it align to 2 way binding and hence can change the variables 
+-----changes in input and buttons----
+in input forms we will use onchange function with e.target.value and in button will use onclick = {()=> {setState()}}
+-----reloading of ui-----
+when we click on the search button nd variable is updated the whole component rerenders means creating the body component and updating the changed component which is an example of reconciliation 
