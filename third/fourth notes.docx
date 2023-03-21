@@ -1,0 +1,40 @@
+polyfills are code which is  replacement of newer version of code , array.map() == pollyfill method 
+babel converts newer code to older code 
+babel is just like a library or package which is taking some code and giving out some code 
+git init makes our repo compatible with git so we get gitignore in our application
+to run command in an easy way we can write a script in package.json == "start": "parcel index.html"
+install babel-plugin-transform-remove-console = removes our console.log from the program
+version will go in package.json and original code will go into node modules
+to use babel we need to configure it == so will create .babelrc for configuration in the whole project 
+when we multiple children in an html tag which are known as siblings so we always need to give them keys
+to declare keys in react we will write it in div object which is called props 
+whenever i have array to render i need to give keys to my children
+keys can be anything which uniquly identifies it
+adding key will remove all our warnings 
+we need to add keys to inject particular change in the DOM without changing very much but only the particular change 
+we give keys by passing it as props and should never have same keys for two objects 
+---------------------createElement--------------------
+react.createElement is giving us an object and object is converted to html code which is then send up on DOM 
+------------------------------------
+JSX = assume it is js xml , needed to update html using js  
+it is an html like syntax in javascript, fb developers built jsx 
+jsx uses react.createElement which makes object and create html (dom) == babel understands jsx and converts into object code
+advantages of jsx = readability, developers friendly 
+--------------
+babel ompiler for next generation js , babel another js library which reads our code and gives normal code 
+babel geenrates AST (asyntax abstract tree) 
+babel comes along with parcel
+---------------------
+React Components == 
+1. functional Component = new way of writing = a piece of js function which returning react element 
+2. class based Component = old way 
+name of compoenet starts with capital letter = not mandatory but good to use 
+functional component is a normal function 
+we need to wrap the functional component using the paranthesis 
+to use the react element in the functional component we directly write react element in the functional component or we can also use the {function_name} in the functional component 
+if we make the react element as a function then we will use it in form of tags = <function_name/> or {function_name()}
+we can write any piece of js code inside functional component just using {}
+if i have an api call and we are getting data from the api 
+if we are able to run the js piece of code in other's system so we get everything about that system but jsx is very secured and takes care it will escape any kind of hacking
+jsx also sanitizes whatever we give it 
+component composition or composing components = if we need to use component inside a component   
