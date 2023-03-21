@@ -1,0 +1,58 @@
+will build our first app today = food villa 
+jsx, ES6, typescript is not mandatory 
+----------planning------------
+1. app should have a header ==> logo on left, home.about...etc on right 
+2. body of app ==> have search bar , also card for restaurant == cards should have image, ratings, price, cuisines 
+3. footer 
+
+JSX expression must have only 1 piece of parent element 
+  to have more put it inside the div 
+  or we can use React.fragment == a compnent which is exported by react 
+  react.fragment is just an empty tag and we will not see any kind of div over here but makes our code ugly so we can write empty tags == <>....</>
+  short hand for React.fragment == <>....</>
+-------------giving css-------
+1. classname
+2. give style = {} in the div tag ---- inline styling
+....style will take some object----
+..we can use React.fragment inside our React.fragment
+---------
+jsx have one root element which is my parent 
+---restaurant card---
+restaurant card have the hard coded data initally so image and other data will be changed 
+to make it dynamic we can use js in our html 
+cuisines should be represented as an array inside the restaurant card and ratings can be a string or integer 
+..to join two things in an array we need to use .join(",")
+-----restaurant dynmic----
+in real world the data is fetch in the form of array of objects in the form of restaurantList where one of the objects is mkop similarly we can have more objects 
+--carousel list ---- it shows the current offers in the particular city on the page == called config driven ui 
+so all frontend ui is driven by a config which is sent by backend 
+..in real world app our website should work everywhere so we control our frontend using config driven by backend and api 
+we all build our frontend website using the config driven ui == ++point in interview 
+--here need to have carousel, offers and data 
+----will make restaurant cards using one array element---
+--making restuarant card dynamically ------
+to make our page dynamic we should take data from restlist in the form of object which is 1st rest will take from 1st object..2nd rest will take from 2nd object
+to make this we can pass the function in the form of an array 
+but it wont get changed on it's own so will use the concept of "props"
+to pass data inside the function we will use argumnets and parameters
+//function fn(param1,param2) = parameters -- we receive parameters
+//fn(x,y,z) = argumnets -- we pass arguments
+--props---
+react wraps up all the properties we get in the functional component as the word = props
+props are basically an object -- whateever we will pass inside the functional component in the body will become an argument in a function which is a prop 
+--to render different rest use the map function---- == best way to do functional programming 
+----------virtual DOM---------- == virtual dom is a representation of our DOM with us 
+we need virtual DOM for RECONCILIATION
+RECONCILIATION is an diff algo which react uses to differentiate 1 tree from other...determines what needs to change any y and what does not needs to change any y 
+we use RECONCILIATION to find out the difference between actual DOM and virtual DOM , also finds out what needs to updated and renders that only part which is needed to be 
+for eg - if something change inside the 7th dom so it wont rerender everything but only the changed node and it's children 
+when we have multiple children with the same attribute eg - div with different numbers so react will use keys which are unique values related with each attribute snd hence will render only the required portion 
+//above main reason why react is fast and also answer to "why we use key"
+react fiber - change in react 16 - a new reconciliation engine - which is used in diff 
+<head>
+<body>
+  <Rest1>
+  <Rest2> <img>
+  <Rest3>
+</body>
+</head>
