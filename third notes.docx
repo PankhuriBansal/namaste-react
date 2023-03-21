@@ -1,0 +1,58 @@
+react is js librry which fb developers wrote for us 
+if we are using react so we are using these codes to make our code fast 
+we have window to give access to lots of super powers to browser function  -- js engine gives these super powers 
+one way to use react is to use cdn in our code to access React
+document.createElement == used to create h1 tag in js 
+React.createElement = to create h1 tag in react 
+1st arg = tag name
+2nd argument = code or attribute 
+3rd argument = children 
+to run code to production we need to = minify app,clean console,bundle,optimize app, caching also needed
+react doe not inforce anything, we can ignite a lot of things, built by open source ignite by open source
+we need to use bundlers = webpacks ,parcel, vite == all are bundlers examples 
+webpack is the bundler we use in create-react-app...in making our own react app we use the parcel 
+create-react-app uses webpack , babel 
+parcel is known as a package = package is kind of module , if we need to use package we need a package manager
+so we use npm init as a js package manager library but npm doesnt stands for node package manager 
+jest command for testing 
+we will get package.json when we use init in the app  
+npm is used as our react are powered by a lot of things so we need helper packages which comes under npm 
+parcel is a xero configuration build tool for Vue 
+to get parcel in our app we use (parcel not in production env but our developer env= -D == dev dependency) == npm install -D parcel
+dependecny means all packages we need in our project 
+after installing parcel we got dev dependency and package-lock.json 
+^ = known as caret , ~ = tidle --- way to tell which version are we using for a particular package 
+package-lock = to know what exact version do we need to use in production, to know the version of library we are using, it also locks the initial version to avoid any uncertain verions
+package-lock also have integrity to ensure which verion of parcel running on local shouldl be there on production as it has the hash 
+dont put package-lock.json in gitignore , it locks the current version of anything we are using
+node module are kind of db to our whole app, parcel uses a lot of things from node modules
+node modules have librarires to minify the data, browser list makes our app compatible in older browsers and more things, basically helper functions
+node modules should never be put in github repo as package-lock.json will have sufficient info to regenerate the node modules
+npm install react, npm install react-dom
+now ignite app with parser = npx parcel index.html (npx - execute using npm ) (index.html will act as an entry point)
+never touch node modules or package.json 
+gets error as normal js browser does not understands import in App.js, so to fix it we need to tell it is not a normal js file it is a module and will use type
+to import we need to tell it is a module not a normal js file 
+save file and it automatically reflects in the server == life server done by parcel 
+hot module replacement -- hmr -- parcel wil keep a track of any changes in the file 
+file watcher algorithm written in c++ -- done by parcel 
+while reloading or watching files we need some space it created .parcel-cache and uses these files to work on it's own
+npx parcel index.html= created development fix and hosts it on a server
+to make a build = npx parcel build index.html and build all the prod files in the dist folder  
+all the files in dist folder we get our react and reactdom code 
+parcel minifed and bundled our whole code , removing the console logs for us , takes care of all dev and prod differences for us 
+images, media all takes lot time to get reload but parcel do images optimization also
+par build super fast algorithm, do caching while development, parcel also compresses , also compatible with older versions of browser, it add polyfills
+gives us functionality to make app on https = npx parcel index.html --https, also manages the port number 
+parcel also manages the port number, parcel.cache should be placed in gitignore because anything which is auto generated can be put inside gitignore
+parcel also manages consistent hashing algorithm
+react is fast due to virtual dom , it is fast in itself, needs lot of things to make is fast, react uses parcel , parcel acts as a catalyst and a bundler
+parcel is a zero config bundler = just install, give entry point and it will figure out everything 
+parcel also covers tree shaking == removing unwanted code 
+react is pm modi == parcel is amit shah , react need help of everything is work in a together mode 
+this is known as transitive dependecny == dependency on dependencies , a dependency tree on one another 
+we have a package manager which makes our transitive dependencies works in an efficient mode, parcel also created a server for us 
+app compatible with older browser == we have browser list which install parser for us 
+will write browser list inside package.json == make compatible with other browsers by giving browserlist website link
+// "last 2 version"  //app works on last two version 
+to make a performant web scalable app =  so there are so many scalable things that react optimizes for us and many things that bundler gives us 
