@@ -1,0 +1,57 @@
+---------------EXPLORING THE WORLD
+last time we made a food ordering app just like swiggy.com and saw about config driven UI powerful way of making UI
+a backend json object for data retrieval, config.js is for constant data for the whole app , useState is a hook
+hooks are basically a normal js function which gives states to create local variable to update data or update the UI
+so when UI is changed we use local state to update that -- suppose we need to change title it wont work normally for let or const variable , syncing the data on UI and variable we will use state variables
+one thing that makes react very fast is - virtual DOM, reconciliation, diff algorithm == representation of actual DOM - when there is a change in state tree gets modifed and react will rerender the tree updating the only changed node as current tree is compared with the changed tree and difference will be shown here, react fiber is a new  and latest updated diff alogrithm
+when there a state it change react calculates the change and update the tree accordingly - reason why react is very fast due to super power diff algo and fiber 
+useState is a state variable in react , we create variables using array destructuring and pass default initial value in the useState 
+whenever we will change a state variable it will rerender and refresh the whole component very quickly updating the only node which is changed - that is why react is fast 
+-------new class starts-------
+we bind the state variables to input box so whenever we update the input box the state will be changed with every key press nd rerender the whole process 
+when  we dont have to change anything in ui we can use local variable 
+------using search bar in proper way--
+last time the search bar was not working properly , we clicked the onclick buttton it called the filterdata which has 2 variables "searchText and restaurants", it filtered the restaurant list with "KING" inside it and set the list to restaurant with "KING" ....so it will set the restaurants to the whole list which is filtered out and will not work to search the other restuarants
+---------microservices-----
+in older days in java applications the UI used to reside inside the java API something known as JSP , everything used to be in the same,suppose if we have to change one button we need to deploy the whole application -- MONOLITHIC
+but instead of having 1 project we have small small different project - auth, ui,backend,logs,notifications and many more..also we can have many more ports 
+advanages of microservices - easier to test 
+separation of concern or single responsibilty - each microservices ave there own responsibilty without caring about other services
+all these applications have different different ports but having the same domain name 
+-----exploring world in js, api calling in javascript----
+fetch is available through js engine accessed by window object 
+we calls fetch function,passes an api which calls the API 
+to call an API in the body when our page load it used to call an API and fill the data 
+2 ways to do this
+1. user loads the website, make api call, render the page 
+2. when user loads the page, show something on the page, call API and then render the page - better because the page will be available immeditely or early 
+best super power of react is - reconciliation algo, react fiber 
+react has given us this functionality and to make it happen react gives us useEffect 
+--------useEffect-----------
+useEffect is a function - we call it by passing another function into it , this another function is a callback function --
+callback function here means it will not be called immediately, it will be called when useEffect wants it to be called and react makes sure it is called at a specific time 
+specific time whenever our component rerenders and rerender and rerenders, our code in callback function will be called and after every render it will call it's function inside it 
+two times when componets rerenders - when state changes or when props changes 
+but it's bad to call it after every rerender, so not to call it we shall pass dependency array into it
+when dependency changes the useEffect and callback function will be called 
+if dependency is empty it will be called just once just after initial render
+------api calling---- 
+..so to make an API call we should use useEffect with an empty dependency array and useEffect will rerender it 
+to call an api use an async function and fetch the data using fetch method, after that convert it into readable form i.e in json object
+got error in 1st api call due to security issues of browser , to fix it install cors plugin
+-------updating api data in the UI------
+set the setRestaurants state to the json data which we have received by api calling using api object parameters -but bad way to do so use optional chaining 
+in first render the ui will load with old data and when the state rerenders it will update the UI 
+shimmer design effect - a UI resembles actual UI , every company experience this effect 
+--------conditional rendering----
+shimmer ui or data ui 
+create shimmer.js component and using conditional rendering property using ternary operator 
+----fixing search bar----
+need to filter the restaurants...so need to maintain 2 variable states 
+at sny point i want my all restuarants and also the filtered restaurants 
+change state names to filteredRestaurants and will also keep copy of allRestaurants 
+lower cases in search bar - toLowerCase() for converting all the letters in search bar to lower cases 
+* we can run any piece of js code but js expressions but not ks statements 
+------building login logout------
+
+---..microservices VS monolithic
