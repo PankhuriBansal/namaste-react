@@ -1,0 +1,45 @@
+-----last class revision---------
+useEffect is called after component is rendered , two things inside it is callback function and dependency array , having empty array it will be called only once 
+if we dont have dependency array then it wont depend on anything and it will be called after every render 
+react says never create compnent inside a component 
+never ever write useState inside if,else coz it leads to inconsistency
+never write useState hooks inside a for loop 
+create state variables inside functional component 
+read about CDN for image , images are already optimized before coming in the URL
+-----shimmer UI---
+create a shimmer without using npm package
+use the divs to create shimmer property and also use keys in the so need to use key = {index} , so no need to import packages for small things
+use packages in very complacated things eg formiks or babel 
+-------today------
+working on routes , making different pages for the app by using library react-router 
+building about us page, contact us 
+create routing in app.js and create all the components 
+to create routing create appRouter to tell the component to load the about us component if there is a /About Us page
+now create routing configurations 
+if path : "/" => we should load the applayout 
+now provide approuter to our app by using RouterProvider which is coming from React-router-dom 
+also change root.render according to our path and put RouterProvider along with configurations ==>  router = {appRouter}
+----creating error page------
+create Error component nd pass this info to our config 
+whatever we need to load in an error give it in the "errorElement" 
+to show more info about this error by using "useRouterError" (a hook) from react-router-dom
+------moving to another page--
+problem with anchor tag is that it refreshes the whole page 
+cant use href also due to reloading 
+so we will use Link from react-router dom to create routes for other pages but this link will be using anchor tag as browser understands only the anchor tag behind the scenes 
+SPA - a single page application , application which does not reload 
+2 types of routing - client side => loading a different component and server side routing => way that all pages comes from server
+------nested routing-----
+problem here is we dont have header and footer 
+to fix need to change routing config, need to load about between header and footer so we need to make about page children of applayout as it sould come inside applayout not outside of applayout , so use children in applayout 
+outlet component from react-router-dom which is used to make routing work for all the components, all children will directly go into the outlet for routing 
+in html we would see only the path changing without showing any outlet , when we go to home first it will go to render the page and then rerender for api call 
+--------dynamic segments----dynamic routing-----
+anything can be there in this dynamic routing
+if i click on card it should take me to the page of that particular card 
+build component restaurant details
+use useParams from react -router dom , we will get these params inside our routes 
+whatever we put in configs route it will go to useParams to get accessed 
+when  we write code in modular fashiion we can reuse it a lot 
+---to link restaurant with the description page--
+link the restaurant card 
