@@ -1,0 +1,24 @@
+routerProvider to provide router to our app 
+---------LET'S GET CLASSY-----------
+class based component - only clas based component were use , no hooks no useState, painful to write class based code
+later on - react team found that things were getting messy , which were even big and difficult 
+no need to use class based component but we can encounter project having class based component and also asked in interviews     
+use children of children to make more routes from the child element 
+nned to create outlet in about section to make it available for the profile component as profile is the child of about 
+----writing class based component------
+making class based component in the react, 
+use extends to inherit some properties in the class from the parent and render method is used to render some properties into the DOM 
+----props in the classes-----
+passing props in function by using props.name
+props in class based component
+---states in class components------
+in class components class has a constructor  , constructor in class takes in props and we use super(props) 
+constructor is a place used for initialization, whenever a class in invoked a constructor is called which is the best place to create a state variable 
+react gives us access to this.state 
+in functional component we can create two variable using useState but in functions states are created as a part of only one object 
+------react lifecycle-
+in lifecycle first the constructor is called then the render 
+-----api calling------
+in function = we use useEffect to call an api rendering two times , first render . then call data. then rerender 
+in classes = we have constructor, we have render and we have componentdidMount (componentdidMount will be called after my render)
+lifecycle methods - first constructor is called, then component renders and after that componentDidMount is called 
