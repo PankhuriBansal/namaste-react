@@ -1,0 +1,39 @@
+most imp hooks in react are useState and useEffect, we also use useParams
+in this class we will see custom hooks means to build our own hook 
+class components are important for company as some companies use the old project codes having class components 
+componentDidMount is called only once in the component - first mounting happens
+componentDidUpdate will be called when we change our state meaning when we update something - component dont have state or props no update will be done , update happens when there is some change in component 
+componentWillUnmount is used for cleanup the previous states 
+-----building our own hook today----
+hook is at the end a normal js function
+there should be a place to keep all our utility functions so will make a folder like utils which is a utility folder and create a helper.js in utils for common data to be saved , will export function from it and import it in the required component which our component more readable and reusable, also makes code more testable, also makes code maintainable, 
+why? --> reusability,readability,modularity(broken down code into meaninngful pieces), 
+restaurantMenu component is doing 2 things = fetching data and displaying data ....extra logic in this component is getting details of the restaurant..so we will create a hook for fetching detaiils for each restaurant in a new file and with a "name" infront of it     
+we need to create a hook for getting restaurant details from api, so we will make useRestaurant hook to get the details from api , if params changes data should also change...so will create state for this hook only 
+now we will call our api using the useEffect logic -- first we get to know the resId using useParams, then the useRestaurant will give the api data using the useEffect and resId by updating the state variable..it has it's own reconciliation going on 
+useState returns an array, useEffect returns nothing as it a normal js function, useParams returns an object
+while using url we should keep them in the config or constants file 
+useEffect function main logic -- declaring a custom hook function and passing my resId, then used useEffect to for calling the info function, then we called the api and setRestaurant by updating the state and return restaurant 
+------making one more hook-------
+buil a hook for a functionality 
+feature for broken internet and we see that we are offline , to make it i will restrict the user to click on any card shows please connect your internet connection 
+isOnline -- Are you online or not? -- for knowing wether we are online or offline we have "window: online event",
+so we will use a custom hook to check wether we are online or offline "useOnline" 
+when we come back online it will not create a new event listener as we have empty dep array 
+to write the code of useOnline in a good way we need to correct our code by cleaning our cache which is our eventlistener when we go out of our component other browser will keep holding event listener and will blow up
+so to remove these listeners we will use unmount function which is return in functional component , hhoks are always removed in the unmounting phase 
+-------------------helpful in system design interview....lazy loading..-------
+in 2nd lec we studied about parcel, bundler .....basic job of a bundler is to bundle code...parser can produce 1 main js file  
+//chunking, code splitting, dynamic building, lazy loading, ondemand loading, dynamic import == all are same concepts 
+in 1 website there would be 100's of components and if bundler put all components in one js file so it will blast
+to make big websites we need more bundles - though bundling is good but we cannot make more numbers of bundles in an app 
+most of the time we want to make our bundle size smaller and dont want to burden our bundle 
+in large scale applications we build different chunks and bundles based on use cases , eg if i click on trains then it will load the trains page , infact each icon is a different bundle 
+--creating insta mart bundle-----
+create instamart component and not keeping it has parent as we want header and footer on instamart also , instamart code is also inside the index.js 
+for doing chunking we need to do chunking where we have an import for instamart , there we need to use lazy loading and import it in different way using lazy from react library.......doing lazy loading(chunking) on instamart using lazy word from react library, this lazy takes a function and then we will do dynamic import by writing the path over there.....now when we will click on instamart we will not be able to get on the required page as we dont have instamart in our main index.js == this is called lazy loading and all and all and all, the whole instamart code will be there in a sepaate file in our console with it's own name 
+the error is coming from error router , this error comes as when we load instamart which is a different bundle to load which takes time to laod script , meanwhile react tries to render something which is not there, so in this process react suspends the rendering , but after sometime it gets loading on coming to this page as once we have the code in browser as it is a SPA which loads the data in sometime as we are not going to any other page 
+the error for the first time is shown as react will try to render component which is not there so react will suspend the loading as code is not there 
+..to handle this error we use "Suspense" from react lib to wrap indiamart inside suspend lib 
+with suspense we will also use a prop which is called fallback 
+****dont load any lazy loading component inside another component**** -- as it will be loaded after every cycle 
