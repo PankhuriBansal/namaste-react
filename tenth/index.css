@@ -1,0 +1,14 @@
+/* normal native css    
+scss and sass
+inline css
+component libraries: material UI,base UI, ant, chakra 
+styled components 
+tailwind CSS(@tailwind base;
+@tailwind components;
+@tailwind utilities;best documentation) - 
+*/
+/* need to write only the below lines for getting css in our js project, a place where tailwind figures out where to be executed  */
+
+ @tailwind base;   
+ @tailwind components;  
+ @tailwind utilities;   
