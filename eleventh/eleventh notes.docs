@@ -1,0 +1,21 @@
+----making apps look good,using css in the whole project-------
+using tailwind css in this course , the reason to choose framework is optimizing css and it saves time 
+one way of writing css is basic native css file , second way of writing css is scss-- (uses are nesting, converted to basic css), and sass,third way is to make css inline
+inline => putting css directly in html code part but not a good way to write css 
+4th way is to use chakrUI,Ant,Base,MaterialUI - fully loaded library having lot of components - makes easier not to write the css much more, it takes care of responsiveness 
+cons of using library is bundle size increases, we loose control of how our ui should look like 
+5th way - styled components to style components
+6th way - tailwind css framework .. open source css framework, write css on the go means in the same file , have reusability as it have lots of prebuild classes, less bundle size, flxible UI mmeans customizable, faster development,easy to debug
+tailwind is a normal package which can be put with a link in index.html , just use <script src="https://cdn.tailwindcss.com" ></script>  in index.html 
+tailwind css says that writing the css wite it in my way i will take care of it now , tailwind works with classname or class 
+for making fonts bold use class = "font-bold" , for length == text-xl, so for every style we put in there is a class name involved to it 
+for installing in parcel there is different way, for next js different way, different way for angular
+ npm install tailwind postcss = for trasnforming css to js , now do npx tailwindcss init which makes a tailwind.config.js file
+in tailwind.config.js file, please read about all the things involved in tailwind.config.js ,
+now create .postcssrc file to tell our prject that we will have tailwind classes in porject so compile our tailwind css to normal css 
+for classes we will use tailwind css intellisense extension as it is handy 
+square bracket notation to give dynamic value in css 
+when we use css in our file it automatically creates a css file in the inspect element and hence our whole css is generated having the used css elements by using parcel to convert tailwind file to css file
+using tailwind i dont need to switch files and use the classes again and again 
+media queries inside css - css should change according to width of the screen ..suppose if my website crosses the threshold of small device (phone,tab,laptop) make my header purple 
+cons of tailwind = 
